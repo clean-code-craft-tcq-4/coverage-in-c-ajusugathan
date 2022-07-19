@@ -21,10 +21,11 @@ TEST_CASE("Check the limits of passive cooling")
 {
   TemperatureLimits passiveLimit={25,35};
   TemperatureLimits passiveLimit_expected={35,0};
-  SetPassiveCoolingLimit(PASSIVE_COOLING,passiveLimit);
-  REQUIRE(passiveLimit.upperLimit == passiveLimit_expected.upperLimit);
-  REQUIRE(passiveLimit.lowerLimit == passiveLimit_expected.lowerLimit);
-  SetPassiveCoolingLimit(HI_ACTIVE_COOLING,passiveLimit);
-  REQUIRE(passiveLimit.upperLimit == passiveLimit.upperLimit);
-  REQUIRE(passiveLimit.lowerLimit == passiveLimit.lowerLimit); 
+  TemperatureLimits passiveLimit_return;
+  passiveLimit_return=SetPassiveCoolingLimit(PASSIVE_COOLING,passiveLimit);
+  REQUIRE(passiveLimit_return.upperLimit == passiveLimit_expected.upperLimit);
+  REQUIRE(passiveLimit_return.lowerLimit == passiveLimit_expected.lowerLimit);
+  passiveLimit_return=SetPassiveCoolingLimit(HI_ACTIVE_COOLING,passiveLimit);
+  REQUIRE(passiveLimit_return.upperLimit == passiveLimit.upperLimit);
+  REQUIRE(passiveLimit_return.lowerLimit == passiveLimit.lowerLimit); 
 }
