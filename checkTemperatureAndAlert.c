@@ -3,7 +3,7 @@
 
 alertFunction fpSendAlert[2] = {sendToController,sendToEmail};
 
-char * BreachInfo[]={"NORMAL","TOO_LOW","TOO_HIGH"};
+const char * BreachInfo[]={"NORMAL","TOO_LOW","TOO_HIGH"};
 char Alert_Info[50];
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
