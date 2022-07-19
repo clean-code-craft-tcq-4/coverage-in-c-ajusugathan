@@ -37,8 +37,8 @@ AlertTarget checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar,
 
 AlertTarget print_AlertInfo(AlertTarget alertTarget,BreachType breachType,alertFunction *SendAlert)
 {
-  AlertTarget temp;
-  temp =(*SendAlert[alertTarget])(breachType);
+  AlertTarget alertTarget;
+  alertTarget =(*SendAlert[alertTarget])(breachType);
   if((breachType != NORMAL)||(alertTarget!=TO_CONTROLLER))
   {
     printf("%s",Alert_Info);
