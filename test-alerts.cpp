@@ -156,14 +156,14 @@ TEST_CASE("checks for Controller alert alert info and function return")
 TEST_CASE("checks for Email alert alert info and function return")
 {
   char *msg_email={"To: a.b@c.com\nHi, the temperature is NORMAL\n"};
-  REQUIRE(sendToController(NORMAL) == TO_EMAIL);
+  REQUIRE(sendToEmail(NORMAL) == TO_EMAIL);
   REQUIRE(strcmp(msg_email,Alert_Info)==0);
   
   char *msg_email_one={"To: a.b@c.com\nHi, the temperature is TOO_LOW\n"};
-  REQUIRE(sendToController(TOO_LOW) == TO_EMAIL);
+  REQUIRE(sendToEmail(TOO_LOW) == TO_EMAIL);
   REQUIRE(strcmp(msg_email_one,Alert_Info)==0);
   
   char *msg_email_two={"To: a.b@c.com\nHi, the temperature is TOO_HIGH\n"};
-  REQUIRE(sendToController(TOO_HIGH) == TO_EMAIL);
+  REQUIRE(sendToEmail(TOO_HIGH) == TO_EMAIL);
   REQUIRE(strcmp(msg_email_two,Alert_Info)==0);
 }
