@@ -3,7 +3,8 @@
 typedef enum {
   PASSIVE_COOLING,
   HI_ACTIVE_COOLING,
-  MED_ACTIVE_COOLING
+  MED_ACTIVE_COOLING,
+  DEFAULT_STATE   //this state added only for testing
 } CoolingType;
 
 typedef enum {
