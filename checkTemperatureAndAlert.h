@@ -31,6 +31,7 @@ typedef struct{
 }TemperatureLimits;
 
 typedef AlertTarget (*alertFunction) (BreachType breachType);
+extern char Alert_Info[50];
 
 AlertTarget sendToController(BreachType breachType);
 AlertTarget sendToEmail(BreachType breachType);
