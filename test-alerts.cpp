@@ -51,7 +51,7 @@ TEST_CASE("Check the limits of High Active cooling")
 TEST_CASE("Check the limits of Medium Active cooling") 
 {
   TemperatureLimits medActiveLimit={25,35};
-  TemperatureLimits MedActiveLimit_expected={40,0};
+  TemperatureLimits medActiveLimit_expected={40,0};
   TemperatureLimits medActiveLimit_return;
   
   medActiveLimit_return=SetMedActiveCoolingLimit(MED_ACTIVE_COOLING,medActiveLimit);
